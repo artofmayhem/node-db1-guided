@@ -9,7 +9,8 @@ module.exports = {
 }
 
 function get() {
-  return db("posts").select("contents") //select * from
+  return db("posts").select("contents") //select * from posts
+  //return db("posts").select("contents")
 }
 
 function getById() {
