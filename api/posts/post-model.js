@@ -9,12 +9,13 @@ module.exports = {
 }
 
 function get() {
-  return db("posts").select("contents") //select * from posts
+  return db("posts") //select * from posts
   //return db("posts").select("contents")
 }
 
-function getById() {
-  return Promise.resolve('getById wired')
+function getById(id) {
+  //select * from posts where recordid = userGivenId
+  return 
 }
 
 function create() {
