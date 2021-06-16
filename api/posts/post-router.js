@@ -12,8 +12,8 @@ async function checkId(req, res, next) {
     }else{
       res.staus(404).json("Post not found")
     }
-  }catch{
-
+  }catch(err){
+    next(err)
   }
 }
 
