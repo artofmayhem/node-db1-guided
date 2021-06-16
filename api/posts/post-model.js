@@ -25,7 +25,7 @@ async function create({title, contents}) {
 
 async function update(id, {title,contents}) {
   await db("posts").where("id",id).update({title,contents})
-  return Promise.resolve('update wired')
+  return getById(id)
 }
 
 function remove() {
