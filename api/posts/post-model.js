@@ -18,8 +18,9 @@ function getById(id) {
   return db("posts").where("id",id).first()
 }
 
-function create() {
-  return Promise.resolve('create wired')
+function create({title, contents}) {
+  const [id] = await db("posts").insert({title,contents})
+  return 
 }
 
 function update() {
