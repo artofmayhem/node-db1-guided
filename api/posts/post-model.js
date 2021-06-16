@@ -23,7 +23,7 @@ async function create({title, contents}) {
   return getById(id)
 }
 
-function update() {
+function update(id, {title,contents}) {
   return Promise.resolve('update wired')
 }
 
