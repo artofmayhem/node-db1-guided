@@ -3,8 +3,18 @@ const Post = require('./post-model')
 
 const router = express.Router()
 
-function checkId(req, res, next) {
-  next()
+async function checkId(req, res, next) {
+  try{
+    const post = await Post.getById(req.params.id)
+    if(post){
+      req.post = post
+      next()
+    }else{
+      res.staus(404).json("Post not found")
+    }
+  }catch{
+
+  }
 }
 
 function checkPayload(req, res, next) {
