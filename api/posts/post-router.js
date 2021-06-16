@@ -35,7 +35,7 @@ router.get('/', async (req, res, next) => {
   }
 })
 
-router.get('/:id', checkId, async (req, res, next) => {
+router.get('/:id', checkId, async (req, res) => {
   res.status(200).json(req.post)
 })
 
