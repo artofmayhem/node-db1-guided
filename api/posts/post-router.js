@@ -36,12 +36,7 @@ router.get('/', async (req, res, next) => {
 })
 
 router.get('/:id', checkId, async (req, res, next) => {
-  try {
-    const data = await Post.getById()
-    res.json(data)
-  } catch (err) {
-    next(err)
-  }
+  res.status(200).json(req.post)
 })
 
 router.post('/', checkPayload, async (req, res, next) => {
