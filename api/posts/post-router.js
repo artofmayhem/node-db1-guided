@@ -18,7 +18,12 @@ async function checkId(req, res, next) {
 }
 
 function checkPayload(req, res, next) {
-  next()
+  const {title, contents} = req.body
+  if(title && contents){
+    next()
+  }else{
+    res.status(400).json("title and contents required")
+  }
 }
 
 router.get('/', async (req, res, next) => {
