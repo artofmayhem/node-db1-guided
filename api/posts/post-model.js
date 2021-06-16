@@ -15,7 +15,7 @@ function get() {
 
 function getById(id) {
   //select * from posts where recordid = userGivenId
-  return db("posts").where("id",id)
+  return db("posts").where("id",id).first()
 }
 
 function create() {
